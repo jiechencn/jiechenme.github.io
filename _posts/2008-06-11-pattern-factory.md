@@ -3,7 +3,7 @@ title: 让子类处理-factory method-子类生成实例
 author: Jie Chen
 date: 2008-06-11
 categories: [Design]
-tags: [Java,Pattern]
+tags: [java,pattern]
 ---
 
 前面实验了template method的组装方法，父类中规定了子过程和最后的组装。子过程的实现是在子类中完成的，组装是父类完成。如果改造一下这个template method，把子过程用来生成一个具体的其他类的实例，就变成了工厂方法模式。

@@ -3,7 +3,7 @@ title: 类复用-adaptor-修复现有API和需求的差异
 author: Jie Chen
 date: 2008-03-20
 categories: [Design]
-tags: [Java,Pattern]
+tags: [java,pattern]
 ---
 
 Java IO的SDK中用了大量的adaptor模式来解决不同格式不同方式的文件的读写。它能为客户掩盖掉底层实现的细节。在实际的开发中，它应用于这种情形：

@@ -3,7 +3,7 @@ title: 实例生成-builder-组装生成复杂的实例
 author: Jie Chen
 date: 2008-05-21
 categories: [Design]
-tags: [Java,Pattern]
+tags: [java,pattern]
 ---
 
 builder和template method非常相似，就是父类定义了一个组装过程中的每一个子过程。但是不同点是：最后所有这些子过程的的组装，是由不同的人完成的。template method模式中，父类负责所有总的组装；builder模式中，这些子过程的组装是由director来完成的。

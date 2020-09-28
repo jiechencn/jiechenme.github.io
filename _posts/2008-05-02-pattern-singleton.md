@@ -3,7 +3,7 @@ title: 实例生成-singleton-每时每刻只产生一个单一的实例
 author: Jie Chen
 date: 2008-05-02
 categories: [Design]
-tags: [Java,Pattern]
+tags: [java,pattern]
 ---
 
 
