@@ -2,8 +2,8 @@
 title: 类复用-iterator-迭代模式替代循环数组
 author: Jie Chen
 date: 2008-02-21
-categories: [Design Pattern]
-tags: [java,design]
+categories: [Design]
+tags: [Java,Pattern]
 ---
 
 一般性地，用数组来保存同类型的对象，然后用for循环遍历这个数组就能取出所有的对象，这过程非常简单直接，很好用。
