@@ -113,7 +113,7 @@ mouse.action(MouseClickEventListener.EVENT_DOUBLECLICK);
 mouse.action(MouseRightClickListener.EVENT);
 ~~~
 
-###设计的拓展###
+## 设计的拓展
 
 增加鼠标右键事件，如果能修改MouseClickEventListener的源代码，直接修改。如果不能修改，可以继承EventListener定义一个新监听器类。
 
