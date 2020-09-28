@@ -2,8 +2,8 @@
 title: 让子类处理-template method-子类处理具体的方法
 author: Jie Chen
 date: 2008-04-10
-categories: [Design]
-tags: [java,pattern]
+categories: [Design,Pattern]
+tags: [java]
 ---
 
 template method模式可以让我们顶一个类实现某个功能的的具体的流程，这个流程是规范的，不能被改变。每一个流程是一个方法，模板不定义方法体，方法体由不同的子类去做具体实施。

@@ -2,7 +2,7 @@
 title: 在MFC中给程序注册热键
 author: Jie Chen
 date: 2009-04-18
-categories: [Others]
+categories: [Design,Others]
 tags: [mfc]
 ---
 

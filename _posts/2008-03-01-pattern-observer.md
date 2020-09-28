@@ -2,8 +2,8 @@
 title: 状态管理-observer-模式实现事件驱动
 author: Jie Chen
 date: 2008-03-01
-categories: [Design]
-tags: [java,pattern]
+categories: [Design,Pattern]
+tags: [java]
 ---
 
 用观察者模式处理Java里的图形编程事件响应，非常好理解。多个观察者通过注册事件监听器，监听被观察者，一旦被观察者有状态改变，会发送通知给所有这些观察者去响应。举个最简单的例子，多个病人去看病，首先挂号，然后等叫号。病人就是观察者，医生就是被观察者。医生一旦发出叫号信息，所有病人会检查该叫号判断是不是自己要去看病。
