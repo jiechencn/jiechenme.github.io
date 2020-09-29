@@ -1,5 +1,5 @@
 ---
-title: About
+# title: About
 
 # The About page
 # v2.0
@@ -8,10 +8,8 @@ title: About
 # MIT License
 ---
 
-
-
 <div class="post-content">
-<p align="center">
+<p align="left">
 <img src="/assets/img/jiechen.jpg" width="120" height="120" style="border-radius: 50%;">
 </p>
 <p>
@@ -21,13 +19,15 @@ title: About
 
 <div id="about-cn" class="">
 <p>
-英文介绍
+Hey, I am Jie Chen, an aged software engineer in Microsoft.
 </p>
 </div>
 
 <div id="about-en" class="unloaded">
 <p>
-中文文介绍
+欢迎！
+<br/>
+我刚刚离开Oracle，现在Microsoft，年老色衰，继续搬砖。 
 </p>
 </div>
 
