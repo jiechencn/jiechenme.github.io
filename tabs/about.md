@@ -7,10 +7,9 @@ title: About
 # © 2017-2019 Cotes Chung
 # MIT License
 ---
-
-<div id="page" class="post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 mb-md-4">
-<h1 class="dynamic-title">About</h1>
 <div class="post-content">
+
+> ![](/assets/img/jiechen.jpg)
 
 <p>
 <button id="btn-about-lang" type="button" class="btn btn-outline-primary btn-lang pl-1">
@@ -19,13 +18,13 @@ title: About
 
 <div id="about-cn" class="">
 <p>
-中文介绍
+英文介绍
 </p>
 </div>
 
 <div id="about-en" class="unloaded">
 <p>
-英文介绍
+中文文介绍
 </p>
 </div>
 
@@ -33,4 +32,3 @@ title: About
 
 </div>
 
-</div>
