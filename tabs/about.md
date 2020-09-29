@@ -11,7 +11,9 @@ title: About
 
 
 <div class="post-content">
-<img src="/assets/img/jiechen.jpgo" width="48" height="48">
+<p align="center">
+<img src="/assets/img/jiechen.jpg" width="120" height="120" style="border-radius: 50%;">
+</p>
 <p>
 <button id="btn-about-lang" type="button" class="btn btn-outline-primary btn-lang pl-1">
 <i class="fas fa-language fa-fw mr-1"></i><span>中文</span></button>
