@@ -9,7 +9,7 @@ title: About
 ---
 <div class="post-content">
 
-> ![](/assets/img/jiechen.jpg)
+![](/assets/img/jiechen.jpg)
 
 <p>
 <button id="btn-about-lang" type="button" class="btn btn-outline-primary btn-lang pl-1">
