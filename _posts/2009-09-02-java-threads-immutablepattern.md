@@ -111,7 +111,7 @@ tags: [multithread]
 
 因为Line构造函数直接引用了Point实例，而Point又是不安全的，突破不安全的方法就是让Line构造函数产生的坐标startPoint不直接引用Point，而是根据Point的x和y重新new一个新的Point实例。这样的作用显而易见，即使构造函数传递进来的参数p1如何修改，都不会影响到函数体内重新new出来的新Point对象。因为如下图所示，他们的地址是完全不一样的。
 
-![](/asserts/res/java-threads-immutablepattern-1.png)
+![](/assets/res/java-threads-immutablepattern-1.png)
 
 因此，保持Point类不做修改，只是修改Line的构造函数，就可以保证实例过程之后不会被修改。
 

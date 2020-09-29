@@ -18,7 +18,7 @@ SGA是一组共享内存结构，包含了database的一个实例的所有数据
 
 PGA是对应一个服务进程的内存区域，一个PGA对应一个服务进程，进程之间不可共享同一个PGA。 用Oracle提供的一个示意图更能很好地说明PGA/SGA的区别和各自的领域。
 
-![](/asserts/res/oracle_dba_intro_4_sgapga.jpg)
+![](/assets/res/oracle_dba_intro_4_sgapga.jpg)
   
 ## 二、自动内存管理
 
@@ -111,7 +111,7 @@ oracle提供了v$memory_target_advice的视图对当前的内存分配给出一�
 
 自动共享内存管理的方式简化了SGA的内存管理，只需要设置初始化参数SGA_TARGET，oracle会根据实际内存需要给不同的SGA的component分配足够的内存。除了设置SGA_TARGET之后，还需要设置SGA的各个component的内存，可以全部将他们设为0，也可以部分地设置。这些组件如下：
 
-![](/asserts/res/oracle_dba_intro_4_sga_comp.jpg)
+![](/assets/res/oracle_dba_intro_4_sga_comp.jpg)
 
 设置如下：
 
