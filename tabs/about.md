@@ -7,9 +7,10 @@ title: About
 # © 2017-2019 Cotes Chung
 # MIT License
 ---
-<div class="post-content">
 
 ![](/assets/img/jiechen.jpg)
+
+<div class="post-content">
 
 <p>
 <button id="btn-about-lang" type="button" class="btn btn-outline-primary btn-lang pl-1">
