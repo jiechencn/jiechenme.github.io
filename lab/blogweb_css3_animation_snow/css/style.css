@@ -1,0 +1,39 @@
+h1 {
+	text-transform:uppercase;
+	text-align: left;
+}
+.myHat {
+	width: 50px;
+	height: 38px;
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	background: url(../image/hat.png) no-repeat;
+	cursor: pointer;
+}
+
+.snowBG{
+	background-color: #C4D3E3;
+	background-image: url(../image/snow1.png), 
+					  url(../image/snow2.png), 
+					  url(../image/snow3.png);	
+	-webkit-animation: snowAction 20s linear infinite;
+	-ms-animation: snowAction 20s linear infinite;
+	animation: snowAction 20s linear infinite;
+}
+
+/*Keyframes*/
+@keyframes snowAction {
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+ 
+@-webkit-keyframes snowAction {
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: 500px 1000px, 400px 400px, 300px 300px; }
+}
+@-ms-keyframes snowAction {
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
