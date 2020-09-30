@@ -3,7 +3,7 @@ title: Agile JavaClient and Java Web Start
 author: Jie Chen
 date: 2013-06-08
 categories: [AgilePLM]
-tags: [webstart]
+tags: [javaclient]
 ---
 
 JavaClient uses Java Web Start technology to launch all required jar files and resources into local cache to deploy with online and offline mode. We will discuss how JavaClient is loaded from remote Application Server.

@@ -3,7 +3,7 @@ title: At most how many customized P3 attributes could be added into Agile?
 author: Jie Chen
 date: 2013-06-24
 categories: [AgilePLM]
-tags: [customization]
+tags: [javaclient]
 ---
 
 I have one customer/Oracle Partner Consultant asking me such question: how many customized attributes can be allowed to add to Agile's subclass Page Three? I never did research against this because Agile User Guide never says this and theoretically Agile supports unlimited amount of customized attributes, unless the browser itself cannot handle them in allocated memory. However my customers says when to add almost 1000 attributes, the browser (Web Client) will not show any Page Three attributes, including all the out-of-box attributes. Let's see why.
