@@ -3,7 +3,7 @@ title: cd目录的快速跳转
 author: Jie Chen
 date: 2012-04-19
 categories: [Linux]
-tags: [Shell]
+tags: [shell]
 ---
 
 

@@ -3,7 +3,7 @@ title: 权限转换的Shell脚本
 author: Jie Chen
 date: 2012-06-11
 categories: [Linux]
-tags: [Shell]
+tags: [shell]
 ---
 
 使用chmod可以使用+,-或者=符号给u,g和o三组赋予权限。虽然字面上非常好理解，但是我还是最喜欢直接用八进制组一次性赋值。分享2个自己写的脚本，用来解析权限在字面和八进制之间的快速换算。

@@ -3,7 +3,7 @@ title: 用Join像SQL Outer Join一样合并多文件
 author: Jie Chen
 date: 2012-04-24
 categories: [Linux]
-tags: [Shell]
+tags: [shell]
 ---
 
 曾今处理过一个问题，帮助用户合并多个CSV文件，不需要编程（编程一定会涉及到又是循环又是匹配再填充），Linux下一个join命令，逐步调优，再重定向输出。

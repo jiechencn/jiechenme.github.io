@@ -3,7 +3,7 @@ title: 用$*和$@读取全部参数的细节测试
 author: Jie Chen
 date: 2012-08-08
 categories: [Linux]
-tags: [Shell]
+tags: [shell]
 ---
 
 

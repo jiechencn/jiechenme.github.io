@@ -3,7 +3,7 @@ title: 用/dev/null和/dev/zero更改文件
 author: Jie Chen
 date: 2012-03-11
 categories: [Linux]
-tags: [Shell]
+tags: [shell]
 ---
 
 /dev/null的行为和/dev/zero看起来，有相反的作用，有时又相似。/dev/null就像无底洞，吃掉被指定的重定向。而/dev/zero能为目标文件提供连续的数据流填空。他们的作用可能还不止这些。但是我一般用它们做下面最常用的用途。

@@ -3,7 +3,7 @@ title: grep或sed快速定位大日志文件
 author: Jie Chen
 date: 2012-05-07
 categories: [Linux]
-tags: [Shell]
+tags: [shell]
 ---
 
 客户的系统日志常常几个G以上，全部拿过来再分析的话网络传输非常耗时间，而且里面大部分日志都是很早之前的。介绍有两个非常简单好用又快速的方法，只截取大文件中有用的部分数据。

@@ -3,7 +3,7 @@ title: 用getopts处理全部的选项和参数
 author: Jie Chen
 date: 2012-07-25
 categories: [Linux]
-tags: [Shell]
+tags: [shell]
 ---
 
 
