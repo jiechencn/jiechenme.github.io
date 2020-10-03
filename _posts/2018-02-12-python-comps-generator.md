@@ -91,9 +91,9 @@ xprint(nameDict);
 
 同样，也可以用集合推导，产生一个集合对象
 ~~~
-str = '0,1,2,3,4,5,6,7,8,9'
-set3 = {int(i) for i in str.split(',') if int(i)%2==0}
-xprint(set3)
+	str = '0,1,2,3,4,5,6,7,8,9'
+	set3 = {int(i) for i in str.split(',') if int(i)%2==0}
+	xprint(set3)
 ~~~
 
 ### 二维集合推导
