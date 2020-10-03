@@ -90,11 +90,11 @@ xprint(nameDict);
 ## 集合推导
 
 同样，也可以用集合推导，产生一个集合对象
-
+~~~
 	str = '0,1,2,3,4,5,6,7,8,9'
-	set3 = {int(i) for i in str.split(',') if int(i)%2==0}
+	set3 = { int(i) for i in str.split(',') if int(i)%2==0 }
 	xprint(set3)
-
+~~~
 
 ### 二维集合推导
 
@@ -102,10 +102,11 @@ xprint(nameDict);
 
 ~~~
 # wrong code
-set4 = {{int(i) for i in str.split(',')} for i in str.split(',')}
+set4 = {{ int(i) for i in str.split(',')} for i in str.split(',') }
 for r in set4:
     print(r)
 ~~~
+
 ~~~
 TypeError: unhashable type: 'set'
 ~~~
@@ -118,6 +119,7 @@ for r in set4:
     xprint(r)
 xprint(set4)
 ~~~
+
 ~~~
 type:<class 'set'>,id:2964833125096,value:{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 type:<class 'set'>,id:2964833125320,value:{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
@@ -140,6 +142,7 @@ type:<class 'list'>,id:2964833011784,value:[{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, {0, 
 tupleGene1 = (int(i) for i in str.split(','))
 xprint(tupleGene1)
 ~~~
+
 ~~~
 type:<class 'generator'>,id:1435801381704,value:<generator object <genexpr> at 0x0000014E4C6E6B48>
 ~~~
@@ -158,6 +161,7 @@ mytuple1 = tuple(tupleGene1)
 for e in mytuple1:
     xprint(e)
 ~~~
+
 ~~~
 type:<class 'int'>,id:1546022336,value:0
 type:<class 'int'>,id:1546022368,value:1
