@@ -19,13 +19,13 @@ Oracle的服务进程用来处理连接到当前实例的用户进程的一系�
 
 Oracle所默认的即是专注模式下的服务进程，观察下图可知一个Server Process为一个用户进程服务。
 
-![](/articles/res/oracle_dba_intro_3_dedicated_server.gif)
+![](/assets/res/oracle_dba_intro_3_dedicated_server.gif)
 
 ### Shared共享模式
 
 在共享模式下，Oracle维持一定数量的服务进程，并指派当前处于闲置状态的服务进程响应队列中的用户请求。如下图：
 
-![](/articles/res/oracle_dba_intro_3_shared_server.gif)
+![](/assets/res/oracle_dba_intro_3_shared_server.gif)
 
 1. 转发器Dispatcher接受到用户端的请求
 2. 请求被置入Request队列，并建立了类似电路的一条回路Circurt用来标识请求是来自哪个Client。

@@ -62,11 +62,11 @@ Checksum可以运用在我们自己的应用程序开发中。使用java.util.zi
 
 checksum的校验在国外的各类下载应用中十分普遍，目的就是为了防范文件被恶意篡改。比如下面的一个文件下载提供了SHA1的校验值供用户检查文件是否合法。
 
-![](/articles/res/agileplm-checksuminfs-02.jpg)
+![](/assets/res/agileplm-checksuminfs-02.jpg)
 
 我们可以使用免费的checksum计算工具HashCalc，下载地址为： http://www.slavasoft.com/hashcalc/index.htm
 
 以上述Java代码计算的checksum来做例子运行HashCalc，得到十六进制的803C3123，就是上述十进制的2151428387。
 
-![](/articles/res/java-checksuminfs-03.jpg)
+![](/assets/res/java-checksuminfs-03.jpg)
 

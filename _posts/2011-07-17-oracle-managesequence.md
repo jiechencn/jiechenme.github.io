@@ -10,7 +10,7 @@ Sequence序列值大量应用在表中需要设置ID自动增长作为主键的�
 
 ## 创建
 
-![](/articles/res/oracle_dba_intro_13_createsequence.jpg)
+![](/assets/res/oracle_dba_intro_13_createsequence.jpg)
 
 根据Oracle的SQL定义，sequence的创建语法非常清晰。我们用下面的例子演示最常见的创建方法。
 
