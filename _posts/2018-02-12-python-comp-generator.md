@@ -89,7 +89,6 @@ xprint(nameDict);
 
 同样，也可以用集合推导，产生一个集合对象
 
-![](/assets//res/20180212-python-comps-generator-1.jpg)
 
 ### 二维集合推导
 
