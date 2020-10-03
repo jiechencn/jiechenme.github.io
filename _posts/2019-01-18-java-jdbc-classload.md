@@ -1,7 +1,7 @@
 ---
 title: JDBC驱动的类加载-SPI新瓶装旧酒
 author: Jie Chen
-date:2019-01-18
+date: 2019-01-18
 categories: [Java]
 tags: [jdbc]
 ---
