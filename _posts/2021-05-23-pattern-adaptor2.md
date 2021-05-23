@@ -1,5 +1,5 @@
 ---
-title: 类复用-adaptor-修复现有API和需求的差异
+title: 类复用-adaptor-修复现有API和需求的差异-C#版本
 author: Jie Chen
 date: 2021-05-23
 categories: [Design,Pattern]
