@@ -15,16 +15,16 @@ tags: [CSharp]
 ~~~
 public interface IMessageSender
 {
-	public void Send(string words);
+  public void Send(string words);
 }
 
 
 class TextSender : IMessageSender
 {
-	public void Send(string words)
-	{
-		Console.WriteLine(words);
-	}
+  public void Send(string words)
+  {
+    Console.WriteLine(words);
+  }
 }
 ~~~
 
@@ -43,16 +43,16 @@ smsSender.Send("hello :)");
 ~~~
 public class ThirdPartyMessageSender
 {
-	public virtual void Post(string content, bool supportEmoj)
-	{
-		string realContent = content;
-		if (supportEmoj)
-		{
-			// 编码处理，让字符串支持emoji
-			realContent = content;
-		}
-		Console.WriteLine($"emjo supported: {supportEmoj} : {realContent}");
-	}
+  public virtual void Post(string content, bool supportEmoj)
+  {
+    string realContent = content;
+    if (supportEmoj)
+    {
+      // 编码处理，让字符串支持emoji
+      realContent = content;
+    }
+    Console.WriteLine($"emjo supported: {supportEmoj} : {realContent}");
+  }
 }
 ~~~
 
@@ -65,10 +65,10 @@ public class ThirdPartyMessageSender
 ~~~
 public class MessengeSenderAdaptor : ThirdPartyMessageSender, IMessageSender
 {
-	public void Send(string words)
-	{
-		Post(words, true);
-	}
+  public void Send(string words)
+  {
+    Post(words, true);
+  }
 }
 ~~~
 
@@ -86,16 +86,16 @@ sender.Send("hello1 :)");
 ~~~
 public class MessengeSenderAdaptor2 : IMessageSender
 {
-	ThirdPartyMessageSender _thirdPartySender;
+  ThirdPartyMessageSender _thirdPartySender;
 
-	public MessengeSenderAdaptor2(ThirdPartyMessageSender thirdPartySender)
-	{
-		_thirdPartySender = thirdPartySender;
-	}
-	public void Send(string words)
-	{
-		_thirdPartySender.Post(words, true);
-	}
+  public MessengeSenderAdaptor2(ThirdPartyMessageSender thirdPartySender)
+  {
+    _thirdPartySender = thirdPartySender;
+  }
+  public void Send(string words)
+  {
+    _thirdPartySender.Post(words, true);
+  }
 }
 ~~~
 
