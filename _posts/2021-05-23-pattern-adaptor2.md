@@ -3,7 +3,7 @@ title: 类复用-adaptor-修复现有API和需求的差异-C#版本
 author: Jie Chen
 date: 2021-05-23
 categories: [Design,Pattern]
-tags: [CSharp]
+tags: [csharp]
 ---
 
 需要对现有的类进行功能改进，但是又不想破坏现有类的结构，同时修改现有类有可能会引入bug，所以可以通过适配器的方式，把希望改进的功能挪到适配器中。
