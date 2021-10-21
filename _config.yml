@@ -8,7 +8,7 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: xzoO.Org                          # the main title
+title: JieChen.Me                          # the main title
 
 tagline: 日积月累，制造BUG  # it will display as the sub-title
 
@@ -21,7 +21,7 @@ url: 'https://jiechencn.github.io'
 
 author: Jie Chen                  # change to your full name
 
-avatar: /assets/img/x.png   # support internet resources
+avatar: /assets/img/jiechen.jpg   # support internet resources
 
 github:
   username: jiechencn             # change to your github username
