@@ -1,5 +1,5 @@
 ---
-title: 抽象工厂 AbstraceFactory
+title: 抽象工厂 Abstract Factory
 author: Jie Chen
 date: 2021-10-24
 categories: [Design,Pattern]
