@@ -1,5 +1,5 @@
 ---
-title: 抽象工厂 Abstract Factory
+title: 抽象工厂 Abstract Factory - 外部指定工厂
 author: Jie Chen
 date: 2021-10-24
 categories: [Design,Pattern]

@@ -1,5 +1,5 @@
 ---
-title: 构造模式 Builder
+title: 构造模式 Builder - 通过Director来调度指定Builder的一组方法
 author: Jie Chen
 date: 2021-10-29
 categories: [Design,Pattern]
