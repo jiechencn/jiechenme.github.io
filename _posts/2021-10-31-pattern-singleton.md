@@ -55,7 +55,7 @@ public sealed class USA
 ~~~
 
 
-## 通过static成员变量来初始化私有构造函数
+# 通过static成员变量来初始化私有构造函数
 
 可以通过 static成员变量，就能初始化一个线程安全的实例。
 
@@ -96,7 +96,7 @@ public sealed class USA
     }
 ~~~
 
-## 使用
+# 使用
 
 ~~~
 	China china1 = China.GetInstance();
