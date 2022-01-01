@@ -59,7 +59,7 @@ JLS语言规范不允许这么做，一般编辑环境会直接报错：
 
 	对super的调用必须是构造器的第一个语句
 
-用我前面的文章[类与成员变量的初始化]("https://jiechen.me/posts/java-classinit"){:target="_blank"}来解释就非常容易。
+用我前面的文章[类与成员变量的初始化](https://jiechen.me/posts/java-classinit){:target="_blank"}来解释就非常容易。
 
 父类必须初始化后，子类才能在自己的构造器中引用父类的成员变量（类变量、实例变量）、成员方法。就像在上述错误类中的第一个语句一样， 打印的address还没有初始化，内存都没有建立。
 
