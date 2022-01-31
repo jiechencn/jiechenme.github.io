@@ -27,8 +27,23 @@ Hey, I am Jie Chen, an aged software engineer in Microsoft.
 <p>
 欢迎！
 <br/>
-我刚刚离开Oracle，现在Microsoft，年老色衰，继续搬砖。 
+我刚刚离开Oracle，现在Microsoft，年老色衰，继续搬砖。 <span id="idTimeToRetire"></span>
 </p>
+
+
+<script>
+  var countDownDate = new Date("May 07, 2044").getTime();
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var info = "";
+  if (distance < 0) {
+     info = "已经退休啦。";
+  }else{
+    info = "还有" + days + "天退休。";
+  }
+  document.getElementById("idTimeToRetire").innerHTML = info;
+</script>
 </div>
 
 <script type="text/javascript"> $(function() { const LAN_EN = "EN"; const LAN_CN = "中文"; $("#btn-about-lang").click(function() { if ($("#btn-about-lang span").text() == LAN_CN) { $("#about-cn").addClass("unloaded"); $("#about-en").removeClass("unloaded"); $("#btn-about-lang span").text(LAN_EN); } else { $("#about-cn").removeClass("unloaded"); $("#about-en").addClass("unloaded"); $("#btn-about-lang span").text(LAN_CN); } }); }); </script>

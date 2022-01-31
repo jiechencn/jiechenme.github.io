@@ -13,7 +13,7 @@ title: JieChen.Me                          # the main title
 tagline: 日积月累，制造BUG  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Oracle, Agile, Java, Design Pattern, Weblogic, JVM, Linux
+  C#, .Net, Azure, Oracle, Agile, Java, Design Pattern, Weblogic, JVM, Linux
 
 # Replace with the website url, e.g. 'https://username.github.io'
 # url: 'protocol://domain'
@@ -31,10 +31,10 @@ twitter:
 
 social:
   name: Jie Chen                  # it will shows as the copyright owner in Footer
-  email: JieChenCN@qq.com             # change to your email address
+  email: jie@jiechen.me             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/JieChenCN      # change to your twitter homepage
+    - mailto:jie@jiechen.me      # change to your twitter homepage
     - https://github.com/jiechencn       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
