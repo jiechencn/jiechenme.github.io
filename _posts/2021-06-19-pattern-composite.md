@@ -37,8 +37,9 @@ abstract class AbstractNode
 
 文件夹和文件统一定义成为AbstractNode，具体的相似点和区别在于：
 
-他们都有 Name和Size的属性
-文件夹具有Add和Remove其他Node的功能，定义成virtual，让有条件的Node去做。这里只有文件夹有这个功能
+* 他们都有 Name和Size的属性
+
+* 文件夹具有Add和Remove其他Node的功能，定义成virtual，让有条件的Node去做。这里只有文件夹有这个功能
 
 ## 不同类型的Note的内部处理
 
