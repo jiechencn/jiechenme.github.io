@@ -74,7 +74,8 @@
         {% assign email = site.social.email | split: '@' %}
         javascript:window.open('mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@'))
       {%- elsif entry.type == 'rss' -%}
-        {{ "/feed.xml" | relative_url }}
+        <!--{{ "/feed.xml" | relative_url }}-->
+        https://vpn.jiechen.me
       {%- else -%}
         {{ entry.url }}
       {%- endif -%}
