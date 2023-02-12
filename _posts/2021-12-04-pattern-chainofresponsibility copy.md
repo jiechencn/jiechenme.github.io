@@ -14,14 +14,17 @@ Mediator有调停和斡旋的意思，在设计模式中可以用来做统一管
 
 假设现在有这样的中央集权的新闻社，负责对各类媒体机构进行注册登记，统一发布和谐新闻。先有一个接口，规范接口的行为。
 
+~~~
 public interface IPress
 {
     void ReleaseNews(string news, AbstractMedia media);
     void Register(AbstractMedia media);
 }
+~~~
 
 然后创建一个中央统一的新闻社，实现这两个接口方法。其中ReleaseNews的任务是和谐关键字，然后调度所有的媒体来接收和谐之后的新闻。
 
+~~~
 public class CentralPress : IPress
 {
 
@@ -42,9 +45,11 @@ public class CentralPress : IPress
         }
     }
 }
+~~~
 
 接着创建不同的媒体机构。首先通过抽象类，供上面的接口来引用抽象媒体。在构造器中，调用 press.Register(this)来向中央登记。
 
+~~~
 public abstract class AbstractMedia
 {
     protected IPress press;
@@ -59,9 +64,11 @@ public abstract class AbstractMedia
     public abstract void Send(string news);
     public abstract void Receive(string news);
 }
+~~~
 
 具体到Media类，可以简单地集成抽象类，在Send方法中，把消息传给press，调用press.ReleaseNews，让中央统一修改发布。
 
+~~~
 public class Media : AbstractMedia
 {
     public Media(IPress press, string name) : base(press, name)
@@ -79,9 +86,11 @@ public class Media : AbstractMedia
         press.ReleaseNews(news, this);
     }
 }
+~~~
 
 一条和谐的通道就建成了。看看各个媒体是如何发布真实消息、而中央又是如何修改统一口径的。
 
+~~~
 IPress press = new CentralPress();
 AbstractMedia m1 = new Media(press, "m1");
 AbstractMedia m2 = new Media(press, "m2");
@@ -95,9 +104,11 @@ m2.Send("hello, this is anoter bad news");
 
 Console.WriteLine("-----------------");
 m3.Send("hello, this is a real good news");
+~~~
 
 从输出中就能看到，新闻其实是可以造假的。
 
+~~~
 -----------------
 m1: Sending news=hello, this is a bad news
 
@@ -116,8 +127,7 @@ m3: Sending news=hello, this is a real good news
 m1: received news:hello, this is a real good news
 m2: received news:hello, this is a real good news
 m3: received news:hello, this is a real good news
-
-
+~~~
 
 ## Mediator的优缺点
 
