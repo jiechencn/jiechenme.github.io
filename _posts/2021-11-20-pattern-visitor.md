@@ -12,168 +12,142 @@ tags: [csharp]
 
 如果采用Visitor模式，就能比较好地处理这种情况，虽然Visitor模式使用起来需要一点挑战，就是要对DTO未来的数据处理有前瞻性的预判。
 
-Visitor模式的遵循的原理是：把数据结构的定义和数据的处理分离开来。数据结构预先添加一个 Accept(IVisitor)的方法，方法体内调用 IVisitor.Visit(this)，让Visitor直接访问自己.
+Visitor模式的遵循的原理是：把数据结构的定义和数据的处理分离开来。数据结构预先添加一个 Accept(IVisitor)的方法，方法体内调用 IVisitor.Visit(this)，让Visitor直接访问自己的方法。
 
-假设有这样的例子，有File和Folder两种数据结构的DTO，在交付使用后，觉得有必要添加额外的复杂功能，处理File和Folder内的数据。在 Composite模式的基础上，增加一个接口：
+听起来有点模糊。举个简单的例子。一个学校的学生，是一个简单的DTO数据结构。他们可能会接受外部的一些访问：体检、调研考试等。我们可以这么定义：将学生定义为DTO，体检和考试定义为Visitor，因为这两个Visitor会对DTO做不同的操作，所以对Element的数据访问操作，应该放在Visitor内。
+
+定义一个数据结构 AbstractPeople，简单演示，所以只包含一个Name属性。在这个DTO中，添加一个Accept方法，接受Visitor。方法体内，调用Visistor的visit方法，传入this，访问DTO自己。
 
 ~~~
-public interface IBehavior
+public abstract class AbstractPeople
 {
-	public void Accept(INodeVisitor visitor);
-	public IList<AbstractNode> Iterator();
-}
-~~~
-
-AbstractNode抽象类提供抽象方法实现接口方法。其中Iterator的目的是为了能迭代Folder中的每个File或者 sub-folder的元素，让元素也能Accept(IVisitor)。
-
-~~~
-public abstract class AbstractNode: IBehavior
-{
-	public string Name { get; protected set; } = string.Empty;
-	public int Size { get; protected set; } = default;
-
-	public virtual void Add(AbstractNode node)
+	public string Name { get; set; }
+	public void Accept(IVisitor vistor)
 	{
-	}
-
-	public virtual void Remove(AbstractNode node)
-	{
-	}
-
-	public abstract void Accept(INodeVisitor visitor);
-	public abstract IList<AbstractNode> Iterator();
-}
-
-~~~
-
-FileNode和FolderNode与Compositi模式中的定义一摸一样，只是额外增加了2个接口方法的实现：Accept和Iterator。
-
-~~~
-public class FileNode : AbstractNode
-{
-	public FileNode(string name, int size)
-	{
-		Name = name;
-		Size = size;
-	}
-
-	public override void Accept(INodeVisitor visitor)
-	{
-		visitor.Visit(this);
-	}
-
-	public override IList<AbstractNode> Iterator()
-	{
-		throw new NotImplementedException();
+		vistor.Visit(this);
 	}
 }
 
-public class FolderNode : AbstractNode
+public class Student : AbstractPeople
 {
-	private IList<AbstractNode> children = new List<AbstractNode>();
+	public int Score { get; set; }
+}
 
-	public FolderNode(string name)
-	{
-		Name = name;
-	}
-
-	public override void Add(AbstractNode node)
-	{
-		children.Add(node);
-		Size += node.Size;
-	}
-
-	public override void Remove(AbstractNode node)
-	{
-		children.Remove(node);
-		Size -= node.Size;
-	}
-
-	public override void Accept(INodeVisitor visitor)
-	{
-		visitor.Visit(this);
-	}
-
-	public override IList<AbstractNode> Iterator()
-	{
-		return children.ToList();
-	}
+public class Teacher : AbstractPeople
+{
 }
 ~~~
 
-然后定义IVisitor，分别访问FolderNode和FileNode，进行各自复杂的数据处理。
+然后定一个Visitor，因为它只有方法，所以定义成接口。不同的Visitor，针对DTO的处理方式是不一样的。比如，Examiner就不需要对老师进行考试，这里对学生的分数随机打个分数。
 
 ~~~
-public interface INodeVisitor
+public interface IVisitor
 {
-	public void Visit(FolderNode folder);
-
-	public void Visit(FileNode file);
+	public void Visit(AbstractPeople people);
+}
+public class Doctor : IVisitor
+{
+	public void Visit(AbstractPeople people)
+	{
+		Console.WriteLine($"{people.Name} is in healthy check");
+	}
 }
 
-
-public class NodeVisitor : INodeVisitor
+public class Examiner : IVisitor
 {
-	public void Visit(FolderNode folder)
+	public void Visit(AbstractPeople people)
 	{
-		Console.WriteLine($"{folder.Name} : {folder.Size}");
-		foreach (var node in folder.Iterator())
+		if (people is Student)
 		{
-			// 迭代调用元素的 Accept方法，传入当前的 Visitor实例
-			node.Accept(this);
+			Console.WriteLine($"{people.Name} is in testing");
+			((Student)people).Score = new Random().Next(80, 100);
 		}
 	}
+}
+~~~
 
-	public void Visit(FileNode file)
+为了演示方便，定义一个School的辅助类。用来表示整个学校的教职工，放在一个列表内。InviteVisitor方法用来传入一个Visitor，对列表内的教职工进行访问（要么体检，要么考试）。
+
+~~~
+public class School
+{
+	private List<AbstractPeople> peoples = new List<AbstractPeople>();
+
+	public void Add(AbstractPeople people)
 	{
-		Console.WriteLine($"{file.Name} : {file.Size}");
+		peoples.Add(people);
+	}
+
+	public void InviteVisitor(IVisitor visitor)
+	{
+		foreach(AbstractPeople people in peoples)
+		{
+			people.Accept(visitor);
+		}
 	}
 }
 ~~~
 
-客户端
+客户端通过School辅助类的管理，来调用Visitor
 
 ~~~
-FolderNode dir = new FolderNode("dir");
-FolderNode dir1 = new FolderNode("dir1");
-dir1.Add(new FileNode("file1", 111));
-FolderNode dir2 = new FolderNode("dir2");
-dir2.Add(new FileNode("file2", 222));
-FileNode file3 = new FileNode ("file3", 300);
-dir.Add(dir1);
-dir.Add(dir2);
-dir.Add(file3);
+Student stu1 = new Student() { Name = "Tom" };
+Student stu2 = new Student() { Name = "Jerry" };
+AbstractPeople teacher1 = new Teacher() { Name = "Mr.Chen" };
+AbstractPeople teacher2 = new Teacher() { Name = "Mr.Wang" };
 
-INodeVisitor visitor = new NodeVisitor();
+School school = new School();
+school.Add(stu1);
+school.Add(stu2);
+school.Add(teacher1);
+school.Add(teacher2);
 
-dir.Accept(visitor);
-Console.WriteLine();
+IVisitor doctor = new Doctor();
+IVisitor examiner = new Examiner();
 
-dir1.Accept(visitor);
-Console.WriteLine();
+school.InviteVisitor(doctor);
+school.InviteVisitor(examiner);
 
-dir2.Accept(visitor);
-Console.WriteLine();
-
-file3.Accept(visitor);
+Console.WriteLine($"{stu1.Name} score is {stu1.Score}");
+Console.WriteLine($"{stu2.Name} score is {stu2.Score}");
 ~~~
 
-输出
+输出结果表明不同的Visitor对DTO数据结构的处理，按照预期的设想作用。
 
 ~~~
-dir : 633
-dir1 : 111
-file1 : 111
-dir2 : 222
-file2 : 222
-file3 : 300
-
-dir1 : 111
-file1 : 111
-
-dir2 : 222
-file2 : 222
-
-file3 : 300
+Tom is in healthy check
+Jerry is in healthy check
+Mr.Chen is in healthy check
+Mr.Wang is in healthy check
+Tom is in testing
+Jerry is in testing
+Tom score is 98
+Jerry score is 85
 ~~~
 
+# Double Dispatch
+
+在School的辅助类中，我们调用了 people.Accept(visitor);
+
+~~~
+public void InviteVisitor(IVisitor visitor)
+{
+	foreach(AbstractPeople people in peoples)
+	{
+		people.Accept(visitor); // <----
+	}
+}
+~~~
+
+被调用的 people.Accept(visitor)又调用了 vistor.Visit(this)。这种模式叫做 Double Dispatch。确保了visitor的最终的方法的执行。
+
+~~~
+public void Accept(IVisitor vistor)
+{
+	vistor.Visit(this); // <----
+}
+~~~
+
+# 优缺点
+* 数据结构和数据的处理严格隔离开了。数据处理在单独的Visitor中负责。方便添加新的数据结构的类、或者数据处理的类。
+* 较为复杂，需要严谨的设计。
