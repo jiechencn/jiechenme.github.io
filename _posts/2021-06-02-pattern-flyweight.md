@@ -33,6 +33,8 @@ public class Employee
 ~~~
 
 ## 单实例模式，负责Flyweight工厂的唯一性
+
+~~~
 public class EmployeeFactory
 {
 	private static ConcurrentDictionary<string, Employee> employees = new ConcurrentDictionary<string, Employee>();
@@ -64,6 +66,7 @@ public class EmployeeFactory
 		// 见下面;
 	}
 }
+~~~
 
 ## 简单工厂，负责Flyweight对象的生成
 
