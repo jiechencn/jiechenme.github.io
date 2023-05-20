@@ -69,6 +69,7 @@ public class EmployeeFactory
 
 这里的生成，就是上面提到的：要么从共享库里直接拿出来，要么新建一个放到共享库里并返回
 
+~~~
 public Employee GetEmployee(string type)
 {
 	if (employees.TryGetValue(type, out var emp))
@@ -81,7 +82,7 @@ public Employee GetEmployee(string type)
 
 	return e;
 }
-
+~~~
 	
 ## 使用
 
