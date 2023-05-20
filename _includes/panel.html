@@ -56,7 +56,6 @@
       </div>
     </div>
   {% endif %}
-  {% include twitter_widget.html %}
   </div> <!-- .access -->
 
   {% if page.layout == 'post' and site.toc and page.toc %}
@@ -67,5 +66,7 @@
     <nav id="toc" data-toggle="toc"></nav>
   </div>
   {% endif %}
+  
+  {% include twitter_widget.html %}
 
 </div> <!-- #panel-wrapper -->
